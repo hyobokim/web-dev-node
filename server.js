@@ -1,3 +1,7 @@
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/webdev').then(() => console.log('Database Connected')).catch(err => console.log(err));
+
+
 const express = require('express');   // load the express library
 const app = express();                // create an instance of the library
 
@@ -23,5 +27,6 @@ app.get('/hello', (req, res) => { // use express library to listen for URL patte
 
 require('./services/movies-service')(app);
 require('./services/tweeter-service')(app);
+require('./movies/service')(app); // load the movie service and pass it as an instance of express
 
 app.listen(process.env.PORT || 4000);     // listen to port 4000

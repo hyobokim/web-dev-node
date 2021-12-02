@@ -79,7 +79,7 @@ module.exports = (app) => {
   // }
 
   const likeTweet = (req, res) =>
-    dao.updateTweet(req.params['id'], req.body)
+    dao.updateTweet(req.params.id, req.body)
     .then(status => res.send(status));
 
 

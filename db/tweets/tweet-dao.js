@@ -24,6 +24,7 @@ const createTweet = (tweet) =>
   // newTweet['_id'] = (new Date()).getTime();
   model.create(
       {
+        "_id": (new Date()).getTime(),
         "topic": "Web Development",
         "userName": "ReactJS",
         "verified": false,
